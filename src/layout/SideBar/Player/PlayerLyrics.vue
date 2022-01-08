@@ -64,13 +64,12 @@ export default {
     },
     // 右击歌词
     contextMenu(event) {
-      if (event.target.nodeName.toLowerCase() === 'span') {
-        this.$emit('rClickIndex', event.target.parentNode.id.match(/songlyrics_(\d+)/)[1])
-        this.scroll.onMouse = false
-        setTimeout(() => {
-          this.scrollGoto()
-        }, 100)
-      }
+      const match = event.target.parentNode.id.match(/songlyrics_(\d+)/) || event.target.id.match(/songlyrics_(\d+)/)
+      this.$emit('rClickIndex', match[1])
+      this.scroll.onMouse = false
+      setTimeout(() => {
+        this.scrollGoto()
+      }, 100)
     },
     // 返回歌词样式
     lyricsStyle(params) {
@@ -89,3 +88,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+div[id*='songlyrics_'] > span {
+  cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAABgAAAAYADwa0LPAAAAh0lEQVRIx+2TTQqAIBBGx2jbDWrd2Ysu0KIbVWAXeG2MNmp/GgU+cKXzvZkBRRIHqKsFANYgpaxZWewJ/i/I7xa6dv76BEnwcQFQAR2wABPQBDOb8AkHIQQdHs7mKI9gEZHCWRj5o+mzD32CwXPX32xsB6iB2bL+ESgfC4ykAlpAm9MEC09srDYkjqDFpjdxAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIyLTAxLTA4VDEwOjM3OjU0KzAwOjAw3KMGHAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMi0wMS0wOFQxMDozNzo1NCswMDowMK3+vqAAAAAASUVORK5CYII='),
+    pointer;
+}
+</style>
