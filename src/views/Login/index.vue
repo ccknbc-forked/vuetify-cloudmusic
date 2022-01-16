@@ -19,7 +19,7 @@
           <component is='LoginPhone' @login='login'></component>
         </v-tab-item>
         <v-tab-item class='py-8'>
-          <component is='LoginQR' @login='login' @loading='(res) => (loading = res)'></component>
+          <component is='LoginQR' @login='login' @loading='loading = $event'></component>
         </v-tab-item>
       </v-tabs-items>
       <!-- 加载提示圈 -->
@@ -46,12 +46,12 @@ export default {
     ...mapMutations({
       setLogin: 'login'
     }),
-    login() {
+    login(cookie) {
       this.overlay = true
       // 获取ID,等级和头像
       this.$http.login.status().then(res => {
         if (res.islogin) {
-          this.setLogin(res)
+          this.setLogin(Object.assign(res, { cookie }))
           this.overlay = false
           this.$message({ text: '登录成功，欢迎使用！', color: 'success' })
           this.$router.replace(this.fullPath)

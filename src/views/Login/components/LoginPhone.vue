@@ -67,23 +67,28 @@ export default {
   methods: {
     login() {
       if (this.password.value !== '') {
-        this.$http.login.cellphone(this.phone.value, this.password.value).then(res => {
-          switch (res) {
-            case 0:
-              this.$message({ text: '密码错误' })
-              this.password.value = ''
-              break
-            case 1: // 登录成功
-              this.$emit('login')
-              break
-            case 2:
-              this.$message({ text: '当前登录失败，请稍后再试' })
-              break
-            case 3:
-              this.$message({ text: '密码错误超过限制，请换二维码登录' })
-              break
-          }
-        })
+        this.$http.login
+          .cellphone(this.phone.value, this.password.value)
+          .then(res => {
+            switch (res.code) {
+              case 0:
+                this.$message({ text: '密码错误' })
+                this.password.value = ''
+                break
+              case 1: // 登录成功
+                this.$emit('login', res.cookie)
+                break
+              case 2:
+                this.$message({ text: '当前登录失败，请稍后再试' })
+                break
+              case 3:
+                this.$message({ text: '密码错误超过限制，请换二维码登录' })
+                break
+            }
+          })
+          .catch(err => {
+            this.$message({ text: err + '，或换二维码登录' })
+          })
       }
     }
   }
