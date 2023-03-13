@@ -391,10 +391,10 @@
   resolved "https://registry.npmmirror.com/@vue/composition-api/-/composition-api-1.4.5.tgz#a15f5407708a6566ade81965476218dfaa4faa29"
   integrity sha512-2Esgcc0EGBqyck4b/yrP2VnGmMr6cPYAE4nF3StIzP8+umNAbRZqBJDc6AhE58whPRt3lHAPf83eppgW7a2dUg==
 
-"@vue/devtools-api@^6.0.0-beta.21":
-  version "6.0.0-beta.21.1"
-  resolved "https://registry.npmmirror.com/@vue/devtools-api/-/devtools-api-6.0.0-beta.21.1.tgz#f1410f53c42aa67fa3b01ca7bdba891f69d7bc97"
-  integrity sha512-FqC4s3pm35qGVeXRGOjTsRzlkJjrBLriDS9YXbflHLsfA9FrcKzIyWnLXoNm+/7930E8rRakXuAc2QkC50swAw==
+"@vue/devtools-api@^6.5.0":
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.5.0.tgz#98b99425edee70b4c992692628fa1ea2c1e57d07"
+  integrity sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q==
 
 "@vue/preload-webpack-plugin@^1.1.0":
   version "1.1.2"
@@ -4896,12 +4896,12 @@ pinia-plugin-persistedstate@^1.2.1:
   resolved "https://registry.npmmirror.com/pinia-plugin-persistedstate/-/pinia-plugin-persistedstate-1.2.1.tgz#e10de366d1b03fc4419ec6a9603d77f42e4b730d"
   integrity sha512-/+/rfZUbNU288kxVS7auwOpA4Zq4tsaD4lkmTAOQIpYRNVkplMvPHY2tW7yc/RAqx9UtFP0VmXIwnhkHdOpk7A==
 
-pinia@^2.0.11:
-  version "2.0.11"
-  resolved "https://registry.npmmirror.com/pinia/-/pinia-2.0.11.tgz#ff03c714f5e5f16207280a4fc2eab01f3701ee2b"
-  integrity sha512-JzcmnMqu28PNWOjDgEDK6fTrIzX8eQZKPPKvu/fpHdpXARUj1xeVdFi3YFIMOWswqaBd589cpmAMdSSTryI9iw==
+pinia@^2.0.31:
+  version "2.0.33"
+  resolved "https://registry.yarnpkg.com/pinia/-/pinia-2.0.33.tgz#b70065be697874d5824e9792f59bd5d87ddb5e7d"
+  integrity sha512-HOj1yVV2itw6rNIrR2f7+MirGNxhORjrULL8GWgRwXsGSvEqIQ+SE0MYt6cwtpegzCda3i+rVTZM+AM7CG+kRg==
   dependencies:
-    "@vue/devtools-api" "^6.0.0-beta.21"
+    "@vue/devtools-api" "^6.5.0"
     vue-demi "*"
 
 pinkie-promise@^2.0.0:
